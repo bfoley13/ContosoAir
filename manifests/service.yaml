@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: contosoworkflow
+  namespace: namespace-workflow-1679336825441
+spec:
+  type: LoadBalancer
+  selector:
+    app: contosoworkflow
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

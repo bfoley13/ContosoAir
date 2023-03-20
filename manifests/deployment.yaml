@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contosoworkflow
+  labels:
+    app: contosoworkflow
+  namespace: namespace-workflow-1679336825441
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contosoworkflow
+  template:
+    metadata:
+      labels:
+        app: contosoworkflow
+    spec:
+      containers:
+        - name: contosoworkflow
+          image: acrworkflow1679336825441.azurecr.io/image-workflow-1679336825441:latest
+          ports:
+            - containerPort: 3000
